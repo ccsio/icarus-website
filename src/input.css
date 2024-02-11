@@ -3,3 +3,8 @@
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
+@font-face {
+    font-family: "DelaGothic";
+    src: url("/src/assets/DelaGothicOne.ttf");
+}
