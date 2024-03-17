@@ -24,9 +24,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/build.css">
     <title>Icarus | Accuiel</title>
-    <link rel="icon" type="image/x-icon" href="../assets/favicon_rounded.png">S
+    <link rel="icon" type="image/x-icon" href="../assets/favicon_rounded.png">
 </head>
-<body>
+<body onload="progressBar()">
+    <div class="mx-10 my-2">
+        <div class="flex justify-between mb-1">
+            <span class="text-base font-medium text-icarus-red">Progression vers les finales mondiales</span>
+            <span class="text-base font-medium text-icarus-red"> <span id="currentAmout" class="font-bold">700</span> <span class="">/ 30,000 €</span></span>
+        </div>
+        <div class="w-full rounded-full bg-gray-700">
+            <div class="bg-icarus-red text-base font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" id="progress" style="width: 2.3%"> 2.3%</div>
+          </div>
+  
+    </div>
     <div id="nav-bar" class="max-w-5xl mx-auto">
         <nav class="flex items-center justify-between">
             <a href="#home" class="py-2 w-fit text-center"><img src="../assets/logo.png" alt="icarus logo" class="w-16 sm:w-28 aspect-auto"></a>
@@ -278,6 +288,17 @@
         menuBtn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
         });
+    </script>
+    <script>
+        const progressBar = () => {
+            const totalMoney = 700;
+            const currentAmout = document.getElementById("currentAmout");
+            currentAmout.innerHTML = totalMoney;
+
+            const progress = document.getElementById("progress");
+            progress.innerHTML = Math.round(totalMoney / 30000 * 1000)/10 + "%";
+            progress.style.width = Math.round(totalMoney / 30000 * 100) + "%";
+        }
     </script>
 </body>
 </html>
