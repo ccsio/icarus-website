@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="/css/build.css">
+</head>
+<body>
+    <div class="max-w-5xl flex justify-evenly mx-auto">
+        <div class="text-center max-w-44">
+            <h3 class="text-icarus-red font-bold text-4xl" id="countries">44</h3>
+            <p class="text-black text-base" >
+                <span class="text-icarus-red font-bold">countries</span> are actively involved in the F1 in Schools project.
+            </p>
+        </div>
+
+        <div class="text-center max-w-44">
+            <h3 class="text-icarus-red font-bold text-4xl" id="schools">26,000</h3>
+            <p class="text-black text-base">
+                <span class="text-icarus-red font-bold">schools</span> participate in the challenge.
+            </p>
+        </div>
+
+        <div class="text-center max-w-44">
+            <h3 class="text-icarus-red font-bold text-4xl" id="students">20000000</h3>
+            <p class="text-black text-base" >
+                <span class="text-icarus-red font-bold">students</span> compete for the 1st place.
+            </p>
+        </div>
+    </div>
+    <button onclick="counter(20000000,'students');counter(26000,'schools');counter(44,'countries')">tst</button>
+    <script>
+        function delay(time) {
+            return new Promise(resolve => setTimeout(resolve, time));
+            }
+
+        const counter = async (max,id) => {
+            const element = document.getElementById(id);
+            element.innerText = 0
+            for (let i = 0; i <= 100; i++) {
+                element.innerText =  parseInt(element.innerText) + Math.ceil(max/100);
+                await delay(10)
+            }
+            element.innerHTML = max
+        }
+    </script>
+</body>
+</html>
