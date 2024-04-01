@@ -1014,7 +1014,9 @@ video {
 @font-face {
   font-family: "DelaGothic";
 
-  src: url("/assets/DelaGothicOne.ttf");
+  font-display: swap;
+
+  src: url("/assets/DelaGothicOne.woff2") format("woff2");
 }
 
 .hover\:bg-gray-100:hover {
