@@ -4,7 +4,8 @@ module.exports = {
     "./src/**/*.{html,js}",
     "*.html",
     "*/*.html",
-    "*/**/*.html"
+    // "*/**/*.html",
+    "./node_modules/flowbite/**/*.js"
   ],
   theme: {
     extend: {
@@ -24,5 +25,7 @@ module.exports = {
       lg: "1024px"
     }
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin')
+  ],
 }
