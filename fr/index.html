@@ -23,14 +23,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/build.css">
-    <title>Icarus | Accuiel</title>
+    <title>Icarus | Accueil</title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon_rounded.png">
 </head>
 <body onload="progressBar()">
     <div class="max-w-6xl mx-auto px-4 py-2"> 
         <div class="flex justify-between mb-1">
             <span class="text-base font-medium text-icarus-red">Progression vers les finales mondiales</span>
-            <span class="text-base font-medium text-icarus-red"> <span id="currentAmout" class="font-bold">700</span> <span class="">/ 30,000 €</span></span>
+            <span class="text-base font-medium text-icarus-red"> <span id="currentAmount" class="font-bold">700</span> <span class="">/ 30,000 €</span></span>
         </div>
         <div class="w-full rounded-full bg-gray-700">
             <div class="bg-icarus-red text-base font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" id="progress" style="width: 2.3%"> 2.3%</div>
@@ -341,21 +341,25 @@
                     <h2 class="text-xl md:text-2xl font-semibold lg:text-3xl">Quels sont les bénéfices ?</h2>
                     <br>
                     <p class="text-sm md:text-lg">
-                        Parrainer une équipe de F1 in Schools met non seulement en valeur <span class="text-icarus-red font-bold">l'engagement de votre marque envers l'éducation et l'innovation</span>, mais offre également une stratégie promotionnelle unique décrite dans notre tableau de parrainage. Ce partenariat aligne votre entreprise avec le frisson de la Formule 1, améliorant subtilement votre image de marque comme innovante et soutenante. Le tableau de parrainage garantit à votre marque une <span class="text-icarus-red font-bold">exposition globale</span> et une connexion avec les talents futurs d'une manière que aucune autre plateforme ne peut égaler. C'est un mouvement stratégique pour les marques désireuses de se démarquer et d'avoir un impact significatif dans le développement des jeunes et de l'éducation.
+                        Parrainer une équipe de F1 in Schools met non seulement en valeur <span class="text-icarus-red font-bold">l'engagement de votre marque envers l'éducation et l'innovation</span>, mais offre également une stratégie promotionnelle unique. Ce partenariat aligne votre entreprise avec le frisson de la Formule 1, améliorant subtilement votre image de marque comme innovante et soutenant. De l'exposition sur nos médias sociaux à votre logo dans nos portefeuilles et sur nos marchandises, nous nous assurons que votre marque est visible dans tous les aspects de F1 in Schools, assurant ainsi une <span class="text-icarus-red font-bold">exposition globale</span> et une connexion avec les talents futurs d'une manière que aucune autre plateforme ne peut égaler. C'est un mouvement stratégique pour les marques désireuses de se démarquer et d'avoir un impact significatif dans le développement des jeunes et de l'éducation.
                     </p>
                 </div>
                 <div>
                     <div class="relative group max-w-[90vw] mx-auto md:max-w-md">
-                        <img src="/assets/event_pictures/showrun_table.webp" height="3629" width="4839" loading="lazy" alt="l'équipe discutant pednant l'événement de Septembre 2023" class="max-w-[90vw] md:max-w-md flex-1 rounded group-hover:brightness-50">
+                        <img src="/assets/event_pictures/showrun_table.webp" height="3629" width="4839" loading="lazy" alt="l'équipe discutant pendant l'événement de Septembre 2023" class="max-w-[90vw] md:max-w-md flex-1 rounded group-hover:brightness-50">
                         <div class="absolute hidden text-white bottom-0 group-hover:block group-hover:bg-icarus-red-1/2 w-full rounded bg-opacity-50">
                             <p class="text-md md:text-lg text-center" >Showrun de Septembre 2023</p>
                         </div>
                     </div>
                 </div>
+                <p class="text-sm md:text-lg">
+                    Intéressé à améliorer le profil de votre entreprise ou prêt à faire la différence ? Envoyez-nous un 
+                    <a class="underline hover:text-icarus-red hover:font-bold" href="mailto:teamicarus@gmx.com?subject=Demande%20de%20partenariat&body=Ch%C3%A8re%20Icarus%2C%0A%0AJ'esp%C3%A8re%20que%20vous%20allez%20bien.%20Je%20suis%20%5Btitre%5D%20%5Bnom%5D%20de%20%5Bnom%20de%20votre%20entreprise%5D%2C%20et%20nous%20sommes%20int%C3%A9ress%C3%A9s%20par%20l'exploration%20des%20opportunit%C3%A9s%20de%20partenariat%20avec%20vous.%20Pourriez-vous%20nous%20fournir%20plus%20de%20d%C3%A9tails%20sur%20ce%20que%20cela%20implique%20%3F%0A%0AMerci%20de%20prendre%20en%20consid%C3%A9ration%20notre%20demande.%20Nous%20sommes%20impatients%20%C3%A0%20l'id%C3%A9e%20de%20pouvoir%20collaborer%20ensemble.%0A%0ACordialement%2C%0A%0A%5Btitre%5D%20%5Bnom%5D%0A%5Bentreprise%5D">e-mail</a> pour plus d'informations.
+                </p>
             </div>
         </div>
         <br>
-        <div class="flex justify-center">
+        <!-- <div class="flex justify-center"> -->
             <!-- <table class="text-white border-2 border-white">
                 <caption class="text-black text-xl md:text-3xl text-center font-bold">Niveaux de parrainage d'Icarus <p class="text-sm text-gray-500 italic text-center lg:text-md font-normal">Nous sommes ouverts à la négociation concernant toute autre forme de promotion ou de marketing que vous pourriez envisager !</p></caption>
                 <tr class="border-2 border-white">
@@ -455,8 +459,8 @@
     <script>
         const progressBar = () => {
             const totalMoney = 1700;
-            const currentAmout = document.getElementById("currentAmout");
-            currentAmout.innerHTML = totalMoney;
+            const currentAmount = document.getElementById("currentAmount");
+            currentAmount.innerHTML = totalMoney;
 
             const progress = document.getElementById("progress");
             progress.innerHTML = Math.round(totalMoney / 30000 * 1000)/10 + "%";
