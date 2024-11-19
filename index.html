@@ -31,7 +31,7 @@
     <div class="max-w-6xl mx-auto px-4 py-2">
         <div class="flex justify-between mb-1">
             <span class="text-base font-medium text-icarus-red">Progress towards World Finals</span>
-            <span class="text-base font-medium text-icarus-red"> <span id="currentAmout" class="font-bold">700</span> <span class="">/ 30,000 €</span></span>
+            <span class="text-base font-medium text-icarus-red"> <span id="currentAmount" class="font-bold">700</span> <span class="">/ 30,000 €</span></span>
         </div>
         <div class="w-full rounded-full bg-gray-700">
             <div class="bg-icarus-red text-base font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" id="progress" style="width: 2.3%"> 2.3%</div>
@@ -94,7 +94,7 @@
         <div class="flex flex-wrap gap-7">
             <div>
                 <div class="relative group max-w-[90vw] mx-auto md:max-w-md">
-                    <img src="/assets/2018_wc.webp" height="1667" width="2500" loading="lazy" alt="Leap Austalia - 2018 World Championship" class="max-w-[90vw] md:max-w-md flex-1 rounded group-hover:brightness-50">
+                    <img src="/assets/2018_wc.webp" height="1667" width="2500" loading="lazy" alt="Leap Australia - 2018 World Championship" class="max-w-[90vw] md:max-w-md flex-1 rounded group-hover:brightness-50">
                     <div class="absolute hidden text-white bottom-0 group-hover:block group-hover:bg-icarus-red-1/2 w-full rounded bg-opacity-50">
                         <p class="text-md md:text-lg text-center" >Leap Australia - 2018 World Championship</p>
                     </div>
@@ -238,7 +238,7 @@
         <div class="flex justify-evenly flex-wrap items-center">
             <div>
                 <a href="https://www.apeeel2.lu/" target="_blank">
-                    <img src="/assets/sponsor_logos/apeeel.png" loading="lazy" alt="apeeel logo" class="rounded lg:max-w-72 max-w-36 md:max-w-48">
+                    <img src="/assets/sponsor_logos/apeeel.png" loading="lazy" alt="Apeeel logo" class="rounded lg:max-w-72 max-w-36 md:max-w-48">
                 </a>
             </div>
             <!-- <div>
@@ -312,7 +312,7 @@
     <br>
     <div id="work-with-us" class="max-w-5xl mx-auto px-4 text-center ">
         <h1 class="text-3xl md:text-4xl lg:text-5xl text-center font-bold">Work with us</h1>
-        <p class="text-sm text-gray-500 italic text-center lg:text-md">Are you a comapny trying to increase its visibility? </p>
+        <p class="text-sm text-gray-500 italic text-center lg:text-md">Are you a company trying to increase its visibility? </p>
         <br>
         <div class="text-justify">
             <div class="flex flex-wrap gap-7">
@@ -329,7 +329,7 @@
                     <br>
                     <p class="text-sm md:text-lg">Through a sponsorship, we are seeking in-kind or <span class="text-icarus-red font-bold">financial contribution</span>. We believe in the <span class="text-icarus-red font-bold">hospitable and professional treatment</span> of all sponsors. Our ability to display our sponsors across social media, local outreach events, our website, and large competitions widens the target demographic to all ages, and a variety of educated audiences in the STEM community all across the globe.
                     <br>
-                    The sponsorship funds will be meticulously allocated to cover essential aspects such as <span class="text-icarus-red font-bold">travel</span>, <span class="text-icarus-red font-bold">accomodation</span>, and meals for events, <span class="text-icarus-red font-bold">competition entry fees</span>, the engineering and development of the car, as well as the creation of an engaging pit display. Additionally, a portion will be dedicated to <span class="text-icarus-red font-bold">branding</span> efforts to ensure both the team and our sponsors receive maximum exposure throughout the competition.
+                    The sponsorship funds will be meticulously allocated to cover essential aspects such as <span class="text-icarus-red font-bold">travel</span>, <span class="text-icarus-red font-bold">accommodation</span>, and meals for events, <span class="text-icarus-red font-bold">competition entry fees</span>, the engineering and development of the car, as well as the creation of an engaging pit display. Additionally, a portion will be dedicated to <span class="text-icarus-red font-bold">branding</span> efforts to ensure both the team and our sponsors receive maximum exposure throughout the competition.
                     </p>
                 </div>
             </div>
@@ -433,7 +433,7 @@
             <p class="text-md md:text-lg lg:text-2xl text-center">Or get in touch us with us? Email us!</p>
                 <br class="my-3 mx-0 block">
             <p class="text-center">
-                <a href="https://www.instagram.com/icarusluxembourg/" taget="_blank" class="font-light text-sm md:text-lg lg:text-xl py-[6px] px-3 border-solid border-icarus-red border-2 rounded hover:bg-icarus-red hover:text-white hover:underline tracking-wide mr-2 md:mr-4 lg:mr-8">Instragram</a>
+                <a href="https://www.instagram.com/icarusluxembourg/" taget="_blank" class="font-light text-sm md:text-lg lg:text-xl py-[6px] px-3 border-solid border-icarus-red border-2 rounded hover:bg-icarus-red hover:text-white hover:underline tracking-wide mr-2 md:mr-4 lg:mr-8">Instagram</a>
                 <a href="mailto:teamicarus@gmx.com" target="_blank" class="font-light text-sm md:text-lg lg:text-xl py-[6px] px-3 border-solid border-icarus-red border-2 rounded hover:bg-icarus-red hover:text-white hover:underline tracking-wide">Email</a>
             </p>
         </div>
@@ -456,8 +456,8 @@
     <script>
         const progressBar = () => {
             const totalMoney = 1700;
-            const currentAmout = document.getElementById("currentAmout");
-            currentAmout.innerHTML = totalMoney;
+            const currentAmount = document.getElementById("currentAmount");
+            currentAmount.innerHTML = totalMoney;
 
             const progress = document.getElementById("progress");
             progress.innerHTML = Math.round(totalMoney / 30000 * 1000)/10 + "%";
