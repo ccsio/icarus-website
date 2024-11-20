@@ -26,7 +26,7 @@
     <title>Icarus | Accueil</title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon_rounded.png">
 </head>
-<body onload="progressBar()">
+<body onload="progressBar()" class="overflow-x-hidden">
     <!-- <div class="max-w-6xl mx-auto px-4 py-2"> 
         <div class="flex justify-between mb-1">
             <span class="text-base font-medium text-icarus-red">Progression vers les finales mondiales</span>
@@ -37,47 +37,56 @@
           </div>
     </div> -->
     
-    <div id="nav-bar" class="max-w-5xl mx-auto">
-        <nav class="flex items-center justify-between">
-            <a href="#home" class="py-2 w-fit text-center"><img src="/assets/logo.webp" alt="icarus logo" class="w-16 sm:w-28 aspect-auto"></a>
-            <div class="flex gap-0 items-center">
-                <div id="menuBtn" class="cursor-pointer">
-                    
-                    <svg class="w-6 mr-4 sm:w-10 aspect-square md:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                    
-                    <div id="menu" class="hidden gap-0 absolute z-20 top-0 right-0 w-full h-full bg-black-1/2 md:hidden">
-                        <div class="flex flex-col w-max px-6 py-2 rounded bg-slate-50 absolute right-0 top-0">
-                            <a href="#f1-in-schools" class="py-2 text-gray-700 hover:bg-gray-100 rounded-full hover:underline hover:font-semibold hover:text-icarus-red w-32 text-md text-center">F1 in Schools</a>
-                            <a href="#about-us" class="py-2 text-gray-700 hover:bg-gray-100 rounded-full hover:underline hover:font-semibold hover:text-icarus-red w-32 text-md text-center">À propos de nous</a>
-                            <a href="#support-us" class="py-2 text-gray-700 hover:bg-gray-100 rounded-full hover:underline hover:font-semibold hover:text-icarus-red w-32 text-md text-center">Soutenez-nous</a>
-                            <a href="#sponsors" class="py-2 text-gray-700 hover:bg-gray-100 rounded-full hover:underline hover:font-semibold hover:text-icarus-red w-32 text-md text-center">Nos sponsors</a>
-                            <a href="#our-team" class="py-2 text-gray-700 hover:bg-gray-100 rounded-full hover:underline hover:font-semibold hover:text-icarus-red w-32 text-md text-center">Notre équipe</a>
-                            <a href="#work-with-us" class="py-2 text-gray-700 hover:bg-gray-100 rounded-full hover:underline hover:font-semibold hover:text-icarus-red w-32 text-md text-center">Travaillez avec nous</a>
-                            <a href="#contact-us" class="py-2 text-gray-700 hover:bg-gray-100 rounded-full hover:underline hover:font-semibold hover:text-icarus-red w-32 text-md text-center">Contact</a>
-                            <a href="../" class="flex justify-center items-center py-2 rounded-full hover:underline hover:font-semibold hover:text-icarus-red w-full text-md text-center lg:text-lg"><img src="/assets/gb.svg" class="lg:h-7 rounded-lg w-8 h-6 lg:w-10"></a>
-                        </div>
+    <nav class="bg-transparent fixed w-full z-20 top-0 start-0" id="navbar">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-wrap items-start md:items-center justify-between mx-auto p-3">
+                <a href="#home" class="space-x-3 rtl:space-x-reverse">
+                    <img src="/assets/logo.webp" class="h-8 md:h-12" alt="Icarus Logo">
+                </a>
+                <div>
+                    <div class="flex justify-end md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                        <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-icarus-red rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-sticky" aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                            </svg>
+                        </button>
                     </div>
-                    <div class="hidden md:flex md:gap-2 lg:gap-4">
-                        <a href="#f1-in-schools" class="py-2 px-1 text-gray-700 rounded-full hover:underline hover:font-semibold hover:text-icarus-red text-md text-center lg:text-lg">F1 in Schools</a>
-                        <a href="#about-us" class="py-2 px-1 text-gray-700 rounded-full hover:underline hover:font-semibold hover:text-icarus-red text-md text-center lg:text-lg">À propos de nous</a>
-                        <a href="#support-us" class="py-2 px-1 text-gray-700 rounded-full hover:underline hover:font-semibold hover:text-icarus-red text-md text-center lg:text-lg">Soutenez-nous</a>
-                        <a href="#sponsors" class="py-2 px-1 text-gray-700 rounded-full hover:underline hover:font-semibold hover:text-icarus-red text-md text-center lg:text-lg">Nos Sponsors</a>
-                        <a href="#our-team" class="py-2 px-1 text-gray-700 rounded-full hover:underline hover:font-semibold hover:text-icarus-red text-md text-center lg:text-lg">Notre équipe</a>
-                        <a href="#work-with-us" class="py-2 px-1 text-gray-700 rounded-full hover:underline hover:font-semibold hover:text-icarus-red text-md text-center lg:text-lg">Travaillez avec nous</a>
-                        <a href="#contact-us" class="py-2 px-1 text-gray-700 rounded-full hover:underline hover:font-semibold hover:text-icarus-red text-md text-center lg:text-lg">Contact</a>
-                        <a href="../" class="py-2 px-1  rounded-full hover:underline hover:font-semibold hover:text-icarus-red w-16 text-md text-center lg:text-lg lg:w-16"><img src="/assets/gb.svg" class="lg:h-7 rounded-lg w-8 h-6 lg:w-10"></a>
+                    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                        <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 bg-gray-100 md:bg-transparent md:text-lg">
+                            <li>
+                                <a href="#f1-in-schools" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">F1 in Schools</a>
+                            </li>
+                            <li>
+                                <a href="#about-us" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">À propos</a>
+                            </li>
+                            <li>
+                                <a href="#support-us" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">Soutenez-nous</a>
+                            </li>
+                            <li>
+                                <a href="#our-sponsors" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">Nos sponsors</a>
+                            </li>
+                            <li>
+                                <a href="#our-team" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">Notre équipe</a>
+                            </li>
+                            <li>
+                                <a href="#work-with-us" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">Travaillez avec nous</a>
+                            </li>
+                            <li>
+                                <a href="#contact" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">Contact</a>
+                            </li>
+                            <li>
+                                <a href="../" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0"><img src="/assets/gb.svg" class="lg:h-7 rounded-lg w-8 h-6 lg:w-10"></a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </nav>
-    </div>
+        </div>
+    </nav>
     
     <!-- flowbite.com -->
-<div class="relative bg-icarus-red w-[98vw]" id="home">
+<div class="relative bg-icarus-red w-screen" id="home">
     <div id="default-carousel" class="relative w-full z-0 ml-0 mt-0" data-carousel="slide">
         <!-- Carousel wrapper -->
         <div class="relative overflow-hidden h-screen mt-0">
@@ -292,7 +301,7 @@
         </div>
     </div>
     <br>
-    <div id="sponsors" class="max-w-5xl mx-auto p-4">
+    <div id="our-sponsors" class="max-w-5xl mx-auto p-4">
         <h1 class="text-3xl md:text-4xl lg:text-5xl text-center font-bold">Nos Sponsors</h1>
         <p class="text-sm text-gray-500 italic text-center lg:text-md">Nous sommes immensément reconnaissants envers nos sponsors et leurs contributions à ce projet ! Sans eux, nous ne serions pas là où nous sommes !</p>
         <br>
@@ -488,7 +497,7 @@
     </div>
 
     <br>
-    <div id="contact-us" class="relative">
+    <div id="contact" class="relative">
         <img loading="lazy" src="/assets/event_pictures/racing.webp" width="811" height="420" alt="une photo de l'équipe pilotant la voiture" class="w-full brightness-[35%]">
         <div class="absolute top-5 sm:top-1/2 left-1/2 transform -translate-x-1/2 sm:-translate-y-1/2 text-white w-full p-2 rounded">
             <h1 class="uppercase text-3xl md:text-5xl lg:text-7xl text-bold font-bold text-center">Contactez-nous </h1>
@@ -532,6 +541,37 @@
     <!-- <script src="/node_modules/flowbite/dist/flowbite.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 
+    <script>
+        // Get the navbar element
+        const navbar = document.getElementById('navbar');
+        const navLinks = document.querySelectorAll('#navbar-sticky a'); 
+    
+        // Listen for the scroll event
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 120) {
+                navbar.classList.add('bg-white');
+                navbar.classList.remove('bg-transparent');
+                navbar.classList.add('border-icarus-red');
+                navbar.classList.add('border-b-2');
+
+                navLinks.forEach(link => {
+                    link.classList.add('md:text-black');
+                    link.classList.remove('md:text-white');
+                });
+
+            } else {
+                navbar.classList.add('bg-transparent');
+                navbar.classList.remove('bg-white');
+                navbar.classList.remove('border-icarus-red');
+                navbar.classList.remove('border-b-2');
+
+                navLinks.forEach(link => {
+                    link.classList.remove('md:text-black');
+                    link.classList.add('md:text-white');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
 
