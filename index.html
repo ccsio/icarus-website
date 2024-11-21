@@ -27,7 +27,6 @@
     <title>Icarus | Home</title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon_rounded.png">
 </head>
-
 <body class="overflow-x-hidden">
 
     <nav class="bg-transparent fixed w-full z-20 top-0 start-0" id="navbar">
@@ -451,52 +450,7 @@
         <br class="my-1 mx-0 block">
         <p>@2024 by Icarus </p>
     </footer>
-    <script>
-        const menuBtn = document.getElementById('menuBtn');
-        const menu = document.getElementById('menu');
-    
-        menuBtn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-    </script>
-    <script>
-        const progressBar = () => {
-            const totalMoney = 1700;
-            const currentAmount = document.getElementById("currentAmount");
-            currentAmount.innerHTML = totalMoney;
 
-            const progress = document.getElementById("progress");
-            progress.innerHTML = Math.round(totalMoney / 30000 * 1000)/10 + "%";
-            progress.style.width = Math.round(totalMoney / 30000 * 100) + "%";
-        }
-
-        function delay(time) {
-            return new Promise(resolve => setTimeout(resolve, time));
-            }
-
-        const counter = async (id) => {
-            const element = document.getElementById(id);
-            let max = element.innerText
-            if (max === "000") {
-                var inc = Math.floor(1000/75)
-            } else {
-                var inc = max/75
-            }
-
-            for (let i = 0; i < 75; i++) {
-                element.innerText = Math.round(i * inc)
-                await delay(2)
-            }
-            element.innerText = max
-        }
-
-        const f1_counters = () => {
-            let arr = ["countries","schools1","schools2","students1","students2","students3"]
-            arr.forEach(element => {
-                counter(element)
-            });
-        }
-    </script>
     <!-- <script src="/node_modules/flowbite/dist/flowbite.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 
@@ -531,6 +485,5 @@
             }
         });
     </script>
-
 </body>
 </html>
