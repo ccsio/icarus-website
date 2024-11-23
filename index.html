@@ -27,63 +27,123 @@
     <title>Icarus | Home</title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon_rounded.png">
 </head>
-<body onload="progressBar()">
-    <div class="max-w-6xl mx-auto px-4 py-2">
-        <div class="flex justify-between mb-1">
-            <span class="text-base font-medium text-icarus-red">Progress towards World Finals</span>
-            <span class="text-base font-medium text-icarus-red"> <span id="currentAmout" class="font-bold">700</span> <span class="">/ 30,000 €</span></span>
-        </div>
-        <div class="w-full rounded-full bg-gray-700">
-            <div class="bg-icarus-red text-base font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" id="progress" style="width: 2.3%"> 2.3%</div>
-          </div>
-  
-    </div>
-  
-    <div id="nav-bar" class="max-w-5xl mx-auto">
-        <nav class="flex items-center justify-between">
-            <a href="#home" class="py-2 w-fit text-center"><img src="/assets/logo.webp" width="1414" height="976" alt="icarus logo" class="w-16 sm:w-28 aspect-auto"></a>
-            <div class="flex gap-0 items-center">
-                <div id="menuBtn" class="cursor-pointer">
-                    
-                    <svg class="w-6 mr-4 sm:w-10 aspect-square md:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                    
-                    <div id="menu" class="hidden gap-0 absolute z-20 top-0 right-0 w-full h-full bg-black-1/2 md:hidden">
-                        <div class="flex flex-col w-max px-6 py-2 rounded bg-slate-50 absolute right-0 top-0">
-                            <a href="#f1-in-schools" class="py-2 text-gray-700 hover:bg-gray-100 rounded-full hover:underline hover:font-semibold hover:text-icarus-red w-32 text-md text-center">F1 in Schools</a>
-                            <a href="#about-us" class="py-2 text-gray-700 hover:bg-gray-100 rounded-full hover:underline hover:font-semibold hover:text-icarus-red w-32 text-md text-center">About Us</a>
-                            <a href="#support-us" class="py-2 text-gray-700 hover:bg-gray-100 rounded-full hover:underline hover:font-semibold hover:text-icarus-red w-32 text-md text-center">Support Us</a>
-                            <a href="#sponsors" class="py-2 text-gray-700 hover:bg-gray-100 rounded-full hover:underline hover:font-semibold hover:text-icarus-red w-32 text-md text-center">Our Sponsors</a>
-                            <a href="#our-team" class="py-2 text-gray-700 hover:bg-gray-100 rounded-full hover:underline hover:font-semibold hover:text-icarus-red w-32 text-md text-center">Our Team</a>
-                            <a href="#work-with-us" class="py-2 text-gray-700 hover:bg-gray-100 rounded-full hover:underline hover:font-semibold hover:text-icarus-red w-32 text-md text-center">Work With Us</a>
-                            <a href="#contact-us" class="py-2 text-gray-700 hover:bg-gray-100 rounded-full hover:underline hover:font-semibold hover:text-icarus-red w-32 text-md text-center">Contact</a>
-                            <a href="/fr/" class="flex justify-center items-center py-2 rounded-full hover:underline hover:font-semibold hover:text-icarus-red w-full text-md text-center lg:text-lg"><img src="/assets/fr.svg" class="lg:h-7 rounded-lg w-8 h-6 lg:w-10"></a>
+<body class="overflow-x-hidden">
+
+    <nav class="bg-transparent fixed w-full z-20 top-0 start-0" id="navbar">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-wrap items-start md:items-center justify-between mx-auto p-3">
+                <a href="#home" class="space-x-3 rtl:space-x-reverse">
+                    <img src="/assets/logo.webp" class="h-8 md:h-12" alt="Icarus Logo">
+                </a>
+                <div>
+                    <div class="flex justify-end md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                        <button id="menuBtn" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-icarus-red rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="nav">
+                        <div id="menu" class="absolute md:relative right-2 items-center justify-between hidden w-auto md:flex md:order-1">
+                            <ul class="flex flex-col p-4 border-2 md:border-none border-icarus-red md:p-0 mt-4 font-medium rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 bg-gray-100 md:bg-transparent md:text-lg">
+                                <li>
+                                    <a href="#f1-in-schools" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">F1 in Schools</a>
+                                </li>
+                                <li>
+                                    <a href="#about-us" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="#support-us" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">Support Us</a>
+                                </li>
+                                <li>
+                                    <a href="#our-sponsors" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">Our Sponsors</a>
+                                </li>
+                                <li>
+                                    <a href="#our-team" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">Our Team</a>
+                                </li>
+                                <li>
+                                    <a href="#work-with-us" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">Work With Us</a>
+                                </li>
+                                <li>
+                                    <a href="#contact" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">Contact</a>
+                                </li>
+                                <li>
+                                    <a href="./fr/" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0"><img src="/assets/fr.svg" class="lg:h-7 rounded-lg w-8 h-6 lg:w-10"></a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="hidden md:flex md:gap-2 lg:gap-4">
-                        <a href="#f1-in-schools" class="py-2 px-1 text-gray-700 rounded-full hover:underline hover:font-semibold hover:text-icarus-red text-md text-center lg:text-lg">F1 in Schools</a>
-                        <a href="#about-us" class="py-2 px-1 text-gray-700 rounded-full hover:underline hover:font-semibold hover:text-icarus-red text-md text-center lg:text-lg">About Us</a>
-                        <a href="#support-us" class="py-2 px-1 text-gray-700 rounded-full hover:underline hover:font-semibold hover:text-icarus-red text-md text-center lg:text-lg">Support Us</a>
-                        <a href="#sponsors" class="py-2 px-1 text-gray-700 rounded-full hover:underline hover:font-semibold hover:text-icarus-red text-md text-center lg:text-lg">Our Sponsors</a>
-                        <a href="#our-team" class="py-2 px-1 text-gray-700 rounded-full hover:underline hover:font-semibold hover:text-icarus-red text-md text-center lg:text-lg">Our Team</a>
-                        <a href="#work-with-us" class="py-2 px-1 text-gray-700 rounded-full hover:underline hover:font-semibold hover:text-icarus-red text-md text-center lg:text-lg">Work With Us</a>
-                        <a href="#contact-us" class="py-2 px-1 text-gray-700 rounded-full hover:underline hover:font-semibold hover:text-icarus-red text-md text-center lg:text-lg">Contact</a>
-                        <a href="/fr/" class="py-2 px-1  rounded-full hover:underline hover:font-semibold hover:text-icarus-red w-16 text-md text-center lg:text-lg lg:w-16"><img src="/assets/fr.svg" class="lg:h-7 rounded-lg w-8 h-6 lg:w-10"></a>
                 </div>
             </div>
-        </nav>
-    </div>
+        </div>
+    </nav>
     
-    <div id="home" class="relative">
-        <img src="/assets/event_pictures/sr_team.webp" fetchpriority="high" width="3045" height="1821" alt="team photo" class="brightness-50 z-0">`
-        <div class="absolute top-5 left-1/2 transform -translate-x-1/2 sm:top-1/2 sm:-translate-y-1/2 text-white p-2 rounded text-center z-10">
+    <!-- flowbite.com -->
+    <div class="relative bg-icarus-red w-screen" id="home">
+        <div id="default-carousel" class="relative w-full z-0 ml-0 mt-0" data-carousel="slide">
+            <!-- Carousel wrapper -->
+            <div class="relative overflow-hidden h-screen mt-0">
+                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                    <picture class="absolute block w-screen h-screen -translate-x-1/2 top-0 left-1/2 brightness-50 z-0 t-0">
+                        <source srcset="/assets/edited/team_photo1_2.webp" media="(max-width: 648px)">
+                        <source srcset="/assets/edited/team_photo9_16.webp" media="(min-width: 649px) and (max-width: 768px)">
+                        <source srcset="/assets/edited/team_photo4_5.webp" media="(min-width: 769px) and (max-width: 1023px)">
+                        <source srcset="/assets/edited/team_photo4_3.webp" media="(min-width: 1024px)">
+                        <img src="/assets/edited/team_photo9_16.webp" alt="Team photo at our pit display 2023">
+                    </picture>
+                </div>
+                <!-- <div class="hidden duration-1000 ease-in-out object-cover" data-carousel-item>
+                    <picture class="absolute block w-screen h-screen -translate-x-1/2 top-0 left-1/2 brightness-50 z-0 t-0 object-cover">
+                        <source srcset="/assets/edited/icarus_podium1_2.webp" media="(max-width: 648px)">
+                        <source srcset="/assets/edited/icarus_podium9_16.webp" media="(min-width: 649px) and (max-width: 768px)">
+                        <source srcset="/assets/edited/icarus_podium4_5.webp" media="(min-width: 769px) and (max-width: 1023px)">
+                        <source srcset="/assets/edited/icarus_podium4_3.webp" media="(min-width: 1024px)">
+                        <img src="/assets/edited/icarus_podium9_16.webp" alt="Our team at the podium">
+                    </picture>
+                </div>
+                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                    <picture class="absolute block w-screen h-screen -translate-x-1/2 top-0 left-1/2 brightness-50 z-0 t-0">
+                        <source srcset="/assets/edited/pit_display1_2.webp" media="(max-width: 648px)">
+                        <source srcset="/assets/edited/pit_display9_16.webp" media="(min-width: 649px) and (max-width: 768px)">
+                        <source srcset="/assets/edited/pit_display4_5.webp" media="(min-width: 769px) and (max-width: 1023px)">
+                        <source srcset="/assets/edited/pit_display4_3.webp" media="(min-width: 1024px)">
+                        <img src="/assets/edited/pit_display9_16.webp" alt="Our team at the pit display 2024">
+                    </picture>
+                </div> -->
+                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                    <picture class="absolute block w-screen h-screen -translate-x-1/2 top-0 left-1/2 brightness-50 z-0 t-0">
+                        <source srcset="/assets/edited/team_smoke_tunnel1_2.webp" media="(max-width: 648px)">
+                        <source srcset="/assets/edited/team_smoke_tunnel9_16.webp" media="(min-width: 649px) and (max-width: 768px)">
+                        <source srcset="/assets/edited/team_smoke_tunnel4_5.webp" media="(min-width: 769px) and (max-width: 1023px)">
+                        <source srcset="/assets/edited/team_smoke_tunnel4_3.webp" media="(min-width: 1024px)">
+                        <img src="/assets/edited/team_smoke_tunnel9_16.webp" alt="Our team at the smoke tunnel">
+                    </picture>
+                </div>
+                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                    <picture class="absolute block w-screen h-screen -translate-x-1/2 top-0 left-1/2 brightness-50 z-0 t-0">
+                        <source srcset="/assets/edited/bake_sale1_2.webp" media="(max-width: 648px)">
+                        <source srcset="/assets/edited/bake_sale9_16.webp" media="(min-width: 649px) and (max-width: 768px)">
+                        <source srcset="/assets/edited/bake_sale4_5.webp" media="(min-width: 769px) and (max-width: 1023px)">
+                        <source srcset="/assets/edited/bake_sale4_3.webp" media="(min-width: 1024px)">
+                        <img src="/assets/edited/bake_sale9_16.webp" alt="Bake Sale Image">
+                    </picture>
+                </div>
+            </div>
+            <!-- Slider indicators -->
+            <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                <button type="button" class="w-2 h-2 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                <!-- <button type="button" class="w-2 h-2 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                <button type="button" class="w-2 h-2 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button> -->
+                <button type="button" class="w-2 h-2 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+                <button type="button" class="w-2 h-2 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+            </div>
+        </div>
+        <div class="absolute top-50 left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2 text-white p-2 rounded text-center z-10">
             <h1 class="uppercase text-3xl text-bold md:text-5xl lg:text-7xl font-bold font-DelaGothic">Icarus</h1>
             <p class="text-center italic text-gray-300 text-xs md:text-sm lg:text-md">Official <a href="#f1-in-schools" class="underline hover:text-icarus-red">F1 in Schools</a>&trade; team</p>
             <br class="my-1 mx-0 block">
-            <p class="text-md md:text-lg lg:text-2xl w-64 lg:w-96">Proud winners of the <span class="font-bold">Judges' Favorite</span> and <span class="font-bold">Regional T1 Top Team</span> Awards</p>  
+            <p class="text-md md:text-lg lg:text-xl w-64 lg:w-96">Proud winners of the <span class="font-bold">Judges' Favorite</span> and <span class="font-bold">Regional T1 Top Team</span> Awards</p>  
         </div>
     </div>
 
@@ -94,9 +154,11 @@
         <div class="flex flex-wrap gap-7">
             <div>
                 <div class="relative group max-w-[90vw] mx-auto md:max-w-md">
-                    <img src="/assets/2018_wc.webp" height="1667" width="2500" loading="lazy" alt="Leap Austalia - 2018 World Championship" class="max-w-[90vw] md:max-w-md flex-1 rounded group-hover:brightness-50">
+                    <img src="/assets/2018_wc.webp" height="1667" width="2500" loading="lazy" alt="Leap Australia - 2018 World Championship" class="max-w-[90vw] md:max-w-md flex-1 rounded group-hover:brightness-50">
                     <div class="absolute hidden text-white bottom-0 group-hover:block group-hover:bg-icarus-red-1/2 w-full rounded bg-opacity-50">
-                        <p class="text-md md:text-lg text-center" >Leap Australia - 2018 World Championship</p>
+                        <p class="text-md md:text-lg text-center">
+                            Leap Australia - 2018 World Championship
+                        </p>
                     </div>
                 </div>
             </div>
@@ -108,8 +170,8 @@
                 <a href="https://www.f1inschools.com/" target="_blank" class="font-light text-sm md:text-lg lg:text-xl py-[6px] px-3 border-solid border-icarus-red border-2 rounded hover:bg-icarus-red hover:text-white hover:underline tracking-wide">Learn more</a>
             </div>
         </div>
-    
-        <br><br>
+        <br>
+        <br>
         <div class="flex justify-between">
             <div class="text-center max-w-36 lg:max-w-60">
                 <h3 class="text-icarus-red font-bold text-3xl text-bold md:text-4xl lg:text-5xl"><span id="countries">44</span></h3>
@@ -117,7 +179,7 @@
                     <span class="font-bold ">countries</span> are actively involved.
                 </p>
             </div>
-            
+
             <div class="text-center max-w-36 lg:max-w-60">
                 <h3 class="text-icarus-red font-bold text-3xl text-bold md:text-4xl lg:text-5xl"><span id="schools1">26</span>,<span id="schools2">000</span></h3>
                 <p class="text-black text-sm md:text-lg">
@@ -134,7 +196,6 @@
         </div>
     </div>
     
-    <br class="my-1 mx-0 block">
     <div id="about-us" class="max-w-5xl mx-auto p-4">
         <h1 class="text-3xl md:text-4xl lg:text-5xl text-center font-bold">About Us</h1>
         <div class="text-center italic text-gray-500">
@@ -144,79 +205,79 @@
             <br>
             - Ralph Waldo Emerson 
         </div>
-
         <br>
         <div class="text-justify">
             <div class="flex flex-wrap gap-7">
                 <div>
                     <div class="relative group max-w-[90vw] mx-auto md:max-w-md">
-                        <img src="/assets/event_pictures/both_trophies.webp" height="1235" width="1093" loading="lazy" alt="photo of our trophies" class="max-w-[90vw] md:max-w-md flex-1 rounded group-hover:brightness-50">
+                        <img src="/assets/event_pictures/pit_display_2024.webp" height="1235" width="1093" loading="lazy" alt="our pit display in 2024" class="max-w-[90vw] md:max-w-md flex-1 rounded group-hover:brightness-50">
                         <div class="absolute hidden text-white bottom-0 group-hover:block group-hover:bg-icarus-red-1/2 w-full rounded bg-opacity-50">
-                            <p class="text-md md:text-lg text-center" >Our trophies</p>
+                            <p class="text-md md:text-lg text-center">2024 Pit Display</p>
                         </div>
                     </div>
                 </div>
                 <div class="text-xl w-fit flex-1 ">
                     <h2 class="text-xl md:text-2xl font-semibold lg:text-3xl">Who are we?</h2>
                     <br>
-                    <p class="text-sm md:text-lg">We are Team Icarus, a <span class="text-icarus-red font-bold">Luxembourgish</span> F1 in Schools team that was established in October 2022. Our team is dedicated to constantly improving all aspects, including our car design, communication, and presentation skills. We have participated in several events and have received two awards: the <span class="text-icarus-red font-bold"> ‘Judges’ Favorite’</span> award, and the <span class="text-icarus-red font-bold">‘Regional T1 Top Team’</span> award, for our simultaneously performant and appealing race car.  </p>
+                    <p class="text-sm md:text-lg">We are Icarus, a <span class="text-icarus-red font-bold">Luxembourgish</span> F1 in Schools team that was established in October 2022. Our team is dedicated to constantly improving all aspects, including our car design, communication, and presentation skills. We have participated in several events and have won a total of 5 awards, including the <span class="text-icarus-red font-bold"> ‘Judges’ Favorite’</span>, <span class="text-icarus-red font-bold">‘Regional T1 Top Team’</span>, and ‘Fastest Car’ awards, by creating a simultaneously highly performant and visually appealing car. </p>
                 </div>
             </div>
+            <br>
 
-            <br>
-            <div class="flex flex-wrap gap-7">
-                <div class="text-xl w-fit flex-1">
-                    <h2 class="text-xl font-semibold lg:text-3xl">Our first event</h2>
-                    <br>
-                    <p class="text-sm md:text-lg">Our first race was in December of 2022, where we faced challenging opposition at Luxembourg’s highest level of competition. Despite being new to the project, we were winners of the ‘Judges’ Favorite’ award, which was an immense and unprecedented success given our inexperience, lack of resources, and time pressure. Such a performance has <span class="text-icarus-red font-bold">set our standards high</span> and has been a source of motivation and <span class="text-icarus-red font-bold">ambition</span> for us to strive for excellence today. </p>
-                </div>
-                <div>
-                    <div class="relative group max-w-[90vw] mx-auto md:max-w-md">
-                        <img src="/assets/event_pictures/participants.webp" width="812" height="612" loading="lazy" alt="group picture of all participants in the December's event" class="max-w-[90vw] md:max-w-md flex-1 rounded group-hover:brightness-50">
-                        <div class="absolute hidden text-white bottom-0 group-hover:block group-hover:bg-icarus-red-1/2 w-full rounded bg-opacity-50">
-                            <p class="text-md md:text-lg text-center" >December's event</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="flex flex-wrap gap-7">
-                <div>
-                    <div class="relative group max-w-[90vw] mx-auto md:max-w-md">
-                        <img src="/assets/event_pictures/new_car.webp" width="2016" height="1134" loading="lazy" alt="photo of our car" class="max-w-[90vw] md:max-w-md flex-1 rounded group-hover:brightness-50">
-                        <div class="absolute hidden text-white bottom-0 group-hover:block group-hover:bg-icarus-red-1/2 w-full rounded bg-opacity-50">
-                            <p class="text-md md:text-lg text-center" >Our newest car design</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-xl w-fit flex-1">
-                    <h2 class="text-xl font-semibold lg:text-3xl">June 2023</h2>
-                    <br>
-                    <p class="text-sm md:text-lg">Recently, we have recruited <span class="text-icarus-red font-bold">three new members</span> who have immeasurably boosted the <span class="text-icarus-red font-bold"><span class="text-icarus-red font-bold"></span></span>, and spirit. Competing at our first event all together in June of 2023, Icarus were declared winners, and we were awarded the ‘Regional T1 Top Team’ for outperforming the competition since preparation.  </p>
-                </div>
-            </div>
-            <br>
-            <div class="flex flex-wrap gap-7"> 
-                <div class="text-xl w-fit flex-1">
-                    <h2 class="text-xl font-semibold lg:text-3xl">Showrun September 2023</h2>
-                    <br>
-                    <p class="text-sm md:text-lg">In September of 2023, we participated in ISL’s F1 in Schools ‘Show Run’, where we presented our pit display, team, and car to potential competitors in this worldwide competition. This event provided invaluable experience to our team, strengthening bonds and communications between members, as well as developing <span class="text-icarus-red font-bold">relationships with other teams.</span> </p>
-                    <br class="my-1 mx-0 block">
-                    <p class="text-sm md:text-lg">Winning the greatest award at national level has driven us to push our limits – We are now dedicated to qualifying for the <span class="text-icarus-red font-bold">2024 World Finals</span>, where we hope to represent Luxembourg on the international stage.  </p>
-                </div>
-                <div>
-                    <div class="relative group max-w-[90vw] mx-auto md:max-w-md">
-                        <img src="/assets/event_pictures/sr_pit_display_2.webp" width="4032" height="3024" loading="lazy" alt="picture of our pit display in September 2023" class="max-w-[90vw] md:max-w-md flex-1 rounded group-hover:brightness-50">
-                        <div class="absolute hidden text-white bottom-0 group-hover:block group-hover:bg-icarus-red-1/2 w-full rounded bg-opacity-50">
-                            <p class="text-md md:text-lg text-center" >Our pit display at September's event</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            <!-- flowbite.com -->
+            <ol class="relative border-s border-icarus-red">                  
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-icarus-red rounded-full mt-1.5 -start-1.5 border border-icarus-red "></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-gray-400">October 2022</time>
+                    <h3 class="text-lg font-semibold text-gray-900">Establishment of the team</h3>
+                    <p class="text-base font-normal text-gray-500">Being fascinated by Formula 1 and engineering, Celia decided to form a new team, quickly inviting Nikos and Lukas to join. We worked tirelessly to create the very first, car portfolios and presentation.</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-icarus-red rounded-full mt-1.5 -start-1.5 border border-icarus-red "></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-gray-400">December 2022</time>
+                    <h3 class="text-lg font-semibold text-gray-900">Our first event</h3>
+                    <p class="text-base font-normal text-gray-500">Our first race at the Luxembourg's highest level of competition and despite our inexperience, lack of time and resources, we won the ‘Judges’ Favorite Award.’ Such performance as set out standards high and has been a source of motivation and ambition for us to strive for excellence today. </p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-icarus-red rounded-full mt-1.5 -start-1.5 border border-icarus-red "></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-gray-400">May 2023</time>
+                    <h3 class="text-lg font-semibold text-gray-900">3 new members</h3>
+                    <p class="text-base font-normal text-gray-500">To help us with the increasing amount of work and our vision to qualify for the World Championships, we accepted 3 new members into the team; Jan, Rohan and Romeo.</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-icarus-red rounded-full mt-1.5 -start-1.5 border border-icarus-red "></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-gray-400">June 2023</time>
+                    <h3 class="text-lg font-semibold text-gray-900">June event</h3>
+                    <p class="text-base font-normal text-gray-500">Right after our team expanded to 6 members, we took part in another event, where we were awarded the ‘Regional T1 Top Team’ for outperforming the competition since preparation.</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-icarus-red rounded-full mt-1.5 -start-1.5 border border-icarus-red "></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-gray-400">September 2023</time>
+                    <h3 class="text-lg font-semibold text-gray-900">New school year Showrun</h3>
+                    <p class="text-base font-normal text-gray-500">At the beginning of the new school year in 2023, we participated in a Showrun, getting to share some of our insights with new enthusiasts and showcase our journey.</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-icarus-red rounded-full mt-1.5 -start-1.5 border border-icarus-red "></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-gray-400">April 2024</time>
+                    <h3 class="text-lg font-semibold text-gray-900">Luxembourg National Finals</h3>
+                    <p class="text-base font-normal text-gray-500">Knowing that winning this event would take us to the World Championships, we went all-in, ensuring that everything was top-notch and of best quality. Despite doing our best, we came in short to fierce and more experienced competition. </p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-icarus-red rounded-full mt-1.5 -start-1.5 border border-icarus-red "></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-gray-400">July-October 2024</time>
+                    <h3 class="text-lg font-semibold text-gray-900">Team reorganization</h3>
+                    <p class="text-base font-normal text-gray-500">Since Jan, Rohan and Romeo graduated high school in July, we were back to 3 members over the summer holidays. Our worries were however proved unnecessary, since we quickly adopted 2 new members; Petar and Konstantina into the team.</p>
+                </li>
+                <li class="mb-10 ms-4">
+                    <div class="absolute w-3 h-3 bg-icarus-red rounded-full mt-1.5 -start-1.5 border border-icarus-red "></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-gray-400">October 2024</time>
+                    <h3 class="text-lg font-semibold text-gray-900">Showrun 2024</h3>
+                    <p class="text-base font-normal text-gray-500">Similarly to the previous year, we were invited to the Showrun at ISL. Now being one of the most experienced teams, were shared our insights, tips and tricks with the younger participants. </p>
+                </li>
+            </ol>
         </div>
     </div>
-    <br>
+    
     <div id="support-us" class="relative">
         <img loading="lazy" src="/assets/event_pictures/sr_team_st.webp" width="4032" height="2621" alt="photo of the team testing at the smoke tunnel" class="w-full brightness-[35%]">
         <div class="absolute top-5 sm:top-1/2 left-1/2 transform -translate-x-1/2 sm:-translate-y-1/2 text-white w-full p-2 rounded">
@@ -231,27 +292,23 @@
         </div>
     </div>
     <br>
-    <div id="sponsors" class="max-w-5xl mx-auto p-4">
+
+    <div id="our-sponsors" class="max-w-5xl mx-auto p-4">
         <h1 class="text-3xl md:text-4xl lg:text-5xl text-center font-bold">Our Sponsors</h1>
         <p class="text-sm text-gray-500 italic text-center lg:text-md">We are immensely thankful to our sponsors and their contributions to this project! Without them, we would not be where we are!</p>
         <br>
         <div class="flex justify-evenly flex-wrap items-center">
             <div>
                 <a href="https://www.apeeel2.lu/" target="_blank">
-                    <img src="/assets/sponsor_logos/apeeel.png" loading="lazy" alt="apeeel logo" class="rounded lg:max-w-72 max-w-36 md:max-w-48">
+                    <img src="/assets/sponsor_logos/apeeel.png" loading="lazy" alt="Apeeel logo" class="rounded lg:max-w-72 max-w-36 md:max-w-48">
                 </a>
-            </div>
-            <!-- <div>
-                <a href="https://www.myhr.lu/" target="_blank">
-                    <img src="/assets/sponsor_logos/myhr-simple.png" loading="lazy" alt="myHR logo" class="rounded lg:max-w-72 max-w-36 md:max-w-48 bg-[#1976d2] p-1.5">
-                </a>
-            </div> -->
-            
+            </div>            
         </div>
         <br>
         <p class="text-center text-sm md:text-base">Want your logo here? Get in <a href="#contact" class="underline hover:text-icarus-red">contact with us</a> and promote your brand!</p>
     </div>
     <br>
+
     <div id="our-team" class="max-w-5xl mx-auto">
         <h1 class="text-3xl md:text-4xl text-black text-center font-bold">Our Team</h1>
         <p class="text-sm text-gray-500 italic text-center lg:text-md">Let us introduce ourselves</p>
@@ -259,85 +316,89 @@
 
         <div class="flex flex-wrap justify-evenly">
             <div class="w-[15rem] h-auto bg-gray-200 text-black p-6 ml-4 rounded mb-4">
-                <img loading="lazy" src="/assets/members/celia.webp" width="2692" height="2692" alt="team leader Celia" class="rounded-full mx-auto w-[150px]">
+                <img loading="lazy" src="/assets/members/celia.webp" width="194" height="194" alt="Team leader Celia" class="rounded-full mx-auto w-[150px]">
                 <br class="my-1 mx-0 block">
                 <h2 class="text-2xl text-center lg:text-3xl">Celia</h2>
                 <h2 class="text-lg text-center text-icarus-red font-bold lg:text-xl">Team Manager</h2>
                 <br class="my-1 mx-0 block">
-                <p class="text-center text-sm md:text-md lg:text-lg"> Celia is the founder and leader of Icarus. At the forefront of our team, Celia undertakes numerous tasks across all fields, ranging from administration to car design.  </p>
+                <p class="text-center text-sm md:text-md lg:text-lg">
+                    Celia is the founder and leader of the team, overseeing administration, and ensuring the smooth functioning of all team operations. Their guidance drives the team's direction and success.
+                </p>
             </div>
             <div class="w-[15rem] h-auto bg-gray-200 text-black p-6 ml-4 rounded mb-4">
-                <img loading="lazy" src="/assets/members/nikos.webp" width="194" height="194" alt="designer engineering Nikos" class="rounded-full mx-auto w-[150px]">
+                <img loading="lazy" src="/assets/members/nikos.webp" width="194" height="194" alt="Designer engineer Nikos" class="rounded-full mx-auto w-[150px]">
                 <br class="my-1 mx-0 block">
                 <h2 class="text-2xl text-center lg:text-3xl">Nikos</h2>
                 <h2 class="text-lg text-center text-icarus-red font-bold lg:text-xl">Design Engineer</h2>
                 <br class="my-1 mx-0 block">
-                <p class="text-center text-sm md:text-md lg:text-lg"> Nikos is responsible for combining the performance and design of our car, relentlessly working on every detail in search of the greatest competitive edge. </p>
+                <p class="text-center text-sm md:text-md lg:text-lg">
+                    Nikos focuses on car design, developing innovative, and high-performance concepts that ensure the team stays ahead of the competition with cutting-edge engineering and creativity.
+                </p>
             </div>
             <div class="w-[15rem] h-auto bg-gray-200 text-black p-6 ml-4 rounded mb-4">
-                <img loading="lazy" src="/assets/members/lukas.webp" width="940" height="940" alt=" IT & designer Lukas" class="rounded-full mx-auto w-[150px]">
+                <img loading="lazy" src="/assets/members/lukas.webp" width="194" height="194" alt=" IT & designer Lukas" class="rounded-full mx-auto w-[150px]">
                 <br class="my-1 mx-0 block">
                 <h2 class="text-2xl text-center lg:text-3xl">Lukas</h2>
                 <h2 class="text-lg text-center text-icarus-red font-bold lg:text-xl">IT & Designer</h2>
                 <br class="my-1 mx-0 block">
-                <p class="text-center text-sm md:text-md lg:text-lg"> Lukas manages our online presence. Maintaining our website and responsible for the team’s online collaboration, Lukas invaluably ties the entire team together. </p>
+                <p class="text-center text-sm md:text-md lg:text-lg">
+                    Lukas handles the team’s IT needs, including maintaining the website, creating designs, and managing the online presence, ensuring the team stays visible and connected in the digital space.
+                </p>
             </div>
             <div class="w-[15rem] h-auto bg-gray-200 text-black p-6 ml-4 rounded mb-4">
-                <img loading="lazy" src="/assets/members/jan.webp" width="192" height="192" alt="Graphical designer Jan" class="rounded-full mx-auto w-[150px]">
+                <img loading="lazy" src="/assets/members/petar.webp" width="194" height="194" alt="Manufacturing engineer Petar" class="rounded-full mx-auto w-[150px]">
                 <br class="my-1 mx-0 block">
-                <h2 class="text-2xl text-center ">Jan</h2>
-                <h2 class="text-lg text-center text-icarus-red font-bold lg:text-xl">Graphical Designer</h2>
+                <h2 class="text-2xl text-center ">Petar</h2>
+                <h2 class="text-lg text-center text-icarus-red font-bold lg:text-xl">Manufacturing Engineer</h2>
                 <br class="my-1 mx-0 block">
-                <p class="text-center text-sm md:text-md lg:text-lg">Jan’s creative mind not only provides us with our logo and pit display but has also been a source of significant improvement in our overall presentation.  </p>
+                <p class="text-center text-sm md:text-md lg:text-lg">
+                    Petar oversees the manufacturing process, ensuring precision and quality in the car's production while also assisting with administrative tasks to support the team's operations.
+                </p>
             </div>
             <div class="w-[15rem] h-auto bg-gray-200 text-black p-6 ml-4 rounded mb-4">
-                <img loading="lazy" src="/assets/members/rohan.webp" width="1824" height="1824" alt="finance maanger Rohan" class="rounded-full mx-auto w-[150px]">
+                <img loading="lazy" src="/assets/members/konstantina.webp" width="194" height="194" alt="Finance & PR Konstantina" class="rounded-full mx-auto w-[150px]">
                 <br class="my-1 mx-0 block">
-                <h2 class="text-2xl text-center lg:text-3xl">Rohan</h2>
-                <h2 class="text-lg text-center text-icarus-red font-bold lg:text-xl">Finance Manager</h2>
+                <h2 class="text-2xl text-center lg:text-3xl">Konstantina</h2>
+                <h2 class="text-lg text-center text-icarus-red font-bold lg:text-xl">Finance & PR</h2>
                 <br class="my-1 mx-0 block">
-                <p class="text-center text-sm md:text-md lg:text-lg"> Rohan, responsible for the team’s external communication, simultaneously looks after the team’s funds, overseeing team decisions from a financial perspective. </p>
+                <p class="text-center text-sm md:text-md lg:text-lg">
+                    Konstantina manages the team’s finances, public relations, and communication, ensuring efficient budget use, building strong sponsor relationships, and effectively presenting the team.
+                </p>
             </div>
             <div class="w-[15rem] h-auto bg-gray-200 text-black p-6 ml-4 rounded mb-4">
-                <img loading="lazy" src="/assets/members/romeo.webp" width="203" height="203" alt="marketing manager Romeo" class="rounded-full mx-auto w-[150px]">
-                <br class="my-1 mx-0 block">
-                <h2 class="text-2xl text-center lg:text-3xl">Romeo</h2>
-                <h2 class="text-lg text-center text-icarus-red font-bold lg:text-xl">Marketing Manager</h2>
-                <br class="my-1 mx-0 block">
-                <p class="text-center text-sm md:text-md lg:text-lg"> Romeo is in charge of our team’s marketing strategies and securing sponsorship deals for our team. In parallel, he adds to all administrative tasks, working particularly closely with Rohan. </p>
-            </div>
-            <div class="w-[15rem] h-auto bg-gray-200 text-black p-6 ml-4 rounded mb-4">
-                <img loading="lazy" src="/assets/members/cheilas.webp" width="157" height="157" alt="team supervisor Mr. Cheilas" class="rounded-full mx-auto w-[150px]">
+                <img loading="lazy" src="/assets/members/cheilas.webp" width="194" height="194" alt="Team supervisor Mr. Cheilas" class="rounded-full mx-auto w-[150px]">
                 <br class="my-1 mx-0 block">
                 <h2 class="text-2xl text-center lg:text-3xl">Mr. Cheilas</h2>
                 <h2 class="text-lg text-center text-icarus-red font-bold lg:text-xl">Supervisor</h2>
                 <br class="my-1 mx-0 block">
-                <p class="text-center text-sm md:text-md lg:text-lg"> Mr. Cheilas, our team supervisor, ensures the cohesion through the provision of an experienced and knowledgeable perspective on all decisions. </p>
+                <p class="text-center text-sm md:text-md lg:text-lg">
+                    Mr. Cheilas, our team supervisor, ensures the cohesion through the provision of an experienced and knowledgeable perspective on all decisions.
+                </p>
             </div>
-        
         </div>
     </div>
     <br>
+
     <div id="work-with-us" class="max-w-5xl mx-auto px-4 text-center ">
         <h1 class="text-3xl md:text-4xl lg:text-5xl text-center font-bold">Work with us</h1>
-        <p class="text-sm text-gray-500 italic text-center lg:text-md">Are you a comapny trying to increase its visibility? </p>
+        <p class="text-sm text-gray-500 italic text-center lg:text-md">Are you a company trying to increase its visibility? </p>
         <br>
         <div class="text-justify">
             <div class="flex flex-wrap gap-7">
-                <div>
-                    <div class="relative group max-w-[90vw] mx-auto md:max-w-md">
-                        <img src="/assets/event_pictures/bake_sale.webp" height="5355" width="4284" loading="lazy" alt="our table at the bake sale in March 2024" class="max-w-[90vw] md:max-w-md flex-1 rounded group-hover:brightness-50">
-                        <div class="absolute hidden text-white bottom-0 group-hover:block group-hover:bg-icarus-red-1/2 w-full rounded bg-opacity-50">
-                            <p class="text-md md:text-lg text-center" >Bake Sale in March 2024</p>
-                        </div>
+                <div class="relative group max-w-[90vw] mx-auto md:max-w-md">
+                    <img src="/assets/event_pictures/bake_sale.webp" height="5355" width="4284" loading="lazy" alt="our table at the bake sale in March 2024" class="max-w-[90vw] md:max-w-md flex-1 rounded group-hover:brightness-50">
+                    <div class="absolute hidden text-white bottom-0 group-hover:block group-hover:bg-icarus-red-1/2 w-full rounded bg-opacity-50">
+                        <p class="text-md md:text-lg text-center" >Bake Sale in March 2024</p>
                     </div>
                 </div>
                 <div class="text-xl w-fit flex-1 ">
                     <h2 class="text-xl md:text-2xl font-semibold lg:text-3xl">Sponsor Us</h2>
                     <br>
-                    <p class="text-sm md:text-lg">Through a sponsorship, we are seeking in-kind or <span class="text-icarus-red font-bold">financial contribution</span>. We believe in the <span class="text-icarus-red font-bold">hospitable and professional treatment</span> of all sponsors. Our ability to display our sponsors across social media, local outreach events, our website, and large competitions widens the target demographic to all ages, and a variety of educated audiences in the STEM community all across the globe.
-                    <br>
-                    The sponsorship funds will be meticulously allocated to cover essential aspects such as <span class="text-icarus-red font-bold">travel</span>, <span class="text-icarus-red font-bold">accomodation</span>, and meals for events, <span class="text-icarus-red font-bold">competition entry fees</span>, the engineering and development of the car, as well as the creation of an engaging pit display. Additionally, a portion will be dedicated to <span class="text-icarus-red font-bold">branding</span> efforts to ensure both the team and our sponsors receive maximum exposure throughout the competition.
+                    <p class="text-sm md:text-lg">
+                        Through a sponsorship, we are seeking in-kind or <span class="text-icarus-red font-bold">financial contribution</span>. We believe in the <span class="text-icarus-red font-bold">hospitable and professional treatment</span> of all sponsors. Our ability to display our sponsors across social media, local outreach events, our website, and large competitions widens the target demographic to all ages, and a variety of educated audiences in the STEM community all across the globe.
+                    </p>
+                    <p class="text-sm md:text-lg">
+                        The sponsorship funds will be meticulously allocated to cover essential aspects such as <span class="text-icarus-red font-bold">travel</span>, <span class="text-icarus-red font-bold">accommodation</span>, and meals for events, <span class="text-icarus-red font-bold">competition entry fees</span>, the engineering and development of the car, as well as the creation of an engaging pit display. Additionally, a portion will be dedicated to <span class="text-icarus-red font-bold">branding</span> efforts to ensure both the team and our sponsors receive maximum exposure throughout the competition.
                     </p>
                 </div>
             </div>
@@ -349,7 +410,7 @@
                     <h2 class="text-xl md:text-2xl font-semibold lg:text-3xl">What are the benefits?</h2>
                     <br>
                     <p class="text-sm md:text-lg">
-                        Sponsoring an F1 in Schools team not only showcases your brand's <span class="text-icarus-red font-bold">commitment to education and innovation</span> but also offers a unique promotional strategy outlined in our sponsorship table. This partnership aligns your company with the thrill of Formula 1, subtly enhancing your brand image as innovative and supportive. The sponsorship table ensures your brand gains <span class="text-icarus-red font-bold">global exposure</span> and connects with future talents in a way no other platform can match. It's a strategic move for brands aiming to stand out and make a meaningful impact in youth and educational development.
+                        Sponsoring an F1 in Schools team not only showcases your brand's <span class="text-icarus-red font-bold">commitment to education and innovation</span> but also offers a unique promotional strategy. This partnership aligns your company with the thrill of Formula 1, subtly enhancing your brand image as innovative and supportive. From exposure on our social media, through your logo in our portfolios and on our merchandise, we make sure to make your brand visible in every aspect of F1 in Schools, ensuring <span class="text-icarus-red font-bold">global exposure</span> and connection with future talents in a way no other platform can match. It's a strategic move for brands aiming to stand out and make a meaningful impact in youth and educational development.
                     </p>
                 </div>
                 <div>
@@ -361,77 +422,13 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <br>
-        <div class="flex justify-center">
-            <table class="text-white border-2 border-white">
-                <caption class="text-black text-xl md:text-3xl text-center font-bold">Icarus Sponsorship Tiers <p class="text-sm text-gray-500 italic text-center lg:text-md font-normal">We are open to negotiations about any other forms of promotion or markerting that you may think of!</p></caption>
-                <tr class="border-2 border-white">
-                    <th class=" bg-blue-950 text-sm md:text-base lg:text-lg">Advantages</th> 
-                    <th class="py-1.5 px-0.5 border-2 border-white min-w-[70px] md:min-w-28 lg:min-w-40 text-sm md:text-base lg:text-lg bg-icarus-red ">Elite <br> <span class="text-xs md:text-sm font-normal py-0 my-0">3,500€+</span></th>
-                    <th class="py-1.5 px-0.5 border-2 border-white min-w-[70px] md:min-w-28 lg:min-w-40 text-sm md:text-base lg:text-lg bg-amber-600 ">Gold <br> <span class="text-xs md:text-sm font-normal py-0 my-0">2,500€+</span></th>
-                    <th class="py-1.5 px-0.5 border-2 border-white min-w-[70px] md:min-w-28 lg:min-w-40 text-sm md:text-base lg:text-lg bg-zinc-700 ">Silver <br> <span class="text-xs md:text-sm font-normal py-0 my-0">1,500€+</span></th>
-                    <th class="py-1.5 px-0.5 border-2 border-white min-w-[70px] md:min-w-28 lg:min-w-40 text-sm md:text-base lg:text-lg bg-yellow-800 ">Bronze <br> <span class="text-xs md:text-sm font-normal py-0 my-0">500€+</span></th>
-                </tr>
-                <tr>
-                    <td class="border-2 border-whte bg-blue-950 text-sm md:text-base md:font-semibold p-2 max-w-44 text-center">Certificate of Appreciation</td>
-                    <td class="border-2 border-whte bg-red-600 text-sm lg:text-lg text-center">&check;</td>
-                    <td class="border-2 border-whte bg-amber-400 text-sm lg:text-lg text-center">&check;</td>
-                    <td class="border-2 border-whte bg-zinc-500 text-sm lg:text-lg text-center">&check;</td>
-                    <td class="border-2 border-whte bg-yellow-600 text-sm lg:text-lg text-center">&check;</td>
-                </tr>
-                <tr>
-                    <td class="border-2 border-whte bg-blue-950 text-sm md:text-base md:font-semibold p-2 max-w-44 text-center">Recognition on Social Media</td>
-                    <td class="border-2 border-whte bg-red-600 text-sm lg:text-lg text-center">&check;</td>
-                    <td class="border-2 border-whte bg-amber-400 text-sm lg:text-lg text-center">&check;</td>
-                    <td class="border-2 border-whte bg-zinc-500 text-sm lg:text-lg text-center">&check;</td>
-                    <td class="border-2 border-whte bg-yellow-600 text-sm lg:text-lg text-center">&check;</td>
-                </tr>
-                <tr>
-                    <td class="border-2 border-whte bg-blue-950 text-sm md:text-base md:font-semibold p-2 max-w-44 text-center">Logo on Website</td>
-                    <td class="border-2 border-whte bg-red-600 text-sm lg:text-lg text-center">&check;</td>
-                    <td class="border-2 border-whte bg-amber-400 text-sm lg:text-lg text-center">&check;</td>
-                    <td class="border-2 border-whte bg-zinc-500 text-sm lg:text-lg text-center">&check;</td>
-                    <td class="border-2 border-whte bg-yellow-600 text-sm lg:text-lg text-center">&check;</td>
-                </tr>
-                <tr>
-                    <td class="border-2 border-whte bg-blue-950 text-sm md:text-base md:font-semibold p-2 max-w-44 text-center">Logo in Portfolios</td>
-                    <td class="border-2 border-whte bg-red-600 text-sm lg:text-lg text-center">&check;</td>
-                    <td class="border-2 border-whte bg-amber-400 text-sm lg:text-lg text-center">&check;</td>
-                    <td class="border-2 border-whte bg-zinc-500 text-sm lg:text-lg text-center">&check;</td>
-                    <td class="border-2 border-whte bg-yellow-600 text-sm lg:text-lg text-center">&check;</td>
-                </tr>
-                <tr>
-                    <td class="border-2 border-whte bg-blue-950 text-sm md:text-base md:font-semibold p-2 max-w-44 text-center">Logo in Pit Display</td>
-                    <td class="border-2 border-whte bg-red-600 text-sm lg:text-lg text-center">&check;</td>
-                    <td class="border-2 border-whte bg-amber-400 text-sm lg:text-lg text-center">&check;</td>
-                    <td class="border-2 border-whte bg-zinc-500 text-sm lg:text-lg text-center">&check;</td>
-                    <td class="border-2 border-whte bg-yellow-600 "></td>
-                </tr>
-                <tr>
-                    <td class="border-2 border-whte bg-blue-950 text-sm md:text-base md:font-semibold p-2 max-w-44 text-center">Logo on Uniform</td>
-                    <td class="border-2 border-whte bg-red-600 text-sm lg:text-lg text-center">&check;</td>
-                    <td class="border-2 border-whte bg-amber-400 text-sm lg:text-lg text-center">&check;</td>
-                    <td class="border-2 border-whte bg-zinc-500 "></td>
-                    <td class="border-2 border-whte bg-yellow-600 "></td>
-                </tr>
-                <tr>
-                    <td class="border-2 border-whte bg-blue-950 text-sm md:text-base md:font-semibold p-2 max-w-44 text-center">Logo on Car</td>
-                    <td class="border-2 border-whte bg-red-600 text-sm lg:text-lg text-center">&check;</td>
-                    <td class="border-2 border-whte bg-amber-400"></td>
-                    <td class="border-2 border-whte bg-zinc-500 "></td>
-                    <td class="border-2 border-whte bg-yellow-600"></td>
-                </tr>
-            </table>
-        </div>
-        <div class="text-sm">
-            Interested in enhancing your company's profile or ready to make a difference? <a href="mailto:teamicarus@gmx.com?subject=Partnership%20Inquiry&body=Dear%20Icarus%2C%0A%0AI%20hope%20this%20message%20finds%20you%20well.%20I%20am%20%5Btitle%5D%20%5Bname%5D%20from%20%5Byour%20company%20name%5D%2C%20and%20we%20are%20very%20interested%20in%20exploring%20partnership%20opportunities%20with%20you.%20Specifically%2C%20we%20are%20looking%20at%20the%20%5Btier%20name%5D%20sponsorship%20tier.%20Could%20you%20please%20provide%20us%20with%20more%20detailed%20information%20about%20what%20this%20entails%3F%0A%0AThank%20you%20for%20considering%20our%20inquiry.%20We%20look%20forward%20to%20the%20possibility%20of%20working%20together.%0A%0AWarm%20regards%2C%0A%0A%5Btitle%5D%20%5Bname%5D%0A%5Bcompany%5D" class="underline hover:text-icarus-red hover:font-bold">Reach out to us</a> for more information.
-        </div>
+            <br>
+            <a href="mailto:teamicarus@gmx.com?subject=Partnership%20Inquiry&body=Dear%20Icarus%2C%0A%0AI%20hope%20this%20message%20finds%20you%20well.%20I%20am%20%5Btitle%5D%20%5Bname%5D%20from%20%5Bcompany%20name%5D%2C%20and%20we%20are%20interested%20in%20exploring%20partnership%20opportunities%20with%20you.%20Could%20you%20please%20provide%20us%20with%20more%20detailed%20information%20about%20what%20this%20entails%3F%0A%0AThank%20you%20for%20considering%20our%20inquiry.%20We%20look%20forward%20to%20the%20possibility%20of%20working%20together.%0A%0AWarm%20regards%2C%0A%0A%5Btitle%5D%20%5Bname%5D%0A%5Bcompany%5D" class="font-light text-sm md:text-lg lg:text-xl py-[6px] px-3 border-solid border-icarus-red border-2 rounded hover:bg-icarus-red hover:text-white hover:underline tracking-normal">More Information →</a>
+        </div> 
     </div>
     <br>
-    <br class="my-1 mx-0 block">
 
-    <div id="contact-us" class="relative">
+    <div id="contact" class="relative">
         <img loading="lazy" src="/assets/event_pictures/racing.webp" width="811" height="420" alt="our team racing our car in December 2023" class="w-full brightness-[35%]">
         <div class="absolute top-5 sm:top-1/2 left-1/2 transform -translate-x-1/2 sm:-translate-y-1/2 text-white w-full p-2 rounded">
             <h1 class="uppercase text-3xl md:text-5xl lg:text-7xl text-bold font-bold text-center">Contact Us</h1>
@@ -439,9 +436,9 @@
             <br class="my-1 mx-0 block lg:my-4">
             <p class="text-md md:text-lg lg:text-2xl text-center">Stay updated and follow us on our <a href="https://www.instagram.com/icarusluxembourg/" class="underline hover:text-icarus-red">Instagram</a></p>
             <p class="text-md md:text-lg lg:text-2xl text-center">Or get in touch us with us? Email us!</p>
-                <br class="my-3 mx-0 block">
+            <br class="my-3 mx-0 block">
             <p class="text-center">
-                <a href="https://www.instagram.com/icarusluxembourg/" taget="_blank" class="font-light text-sm md:text-lg lg:text-xl py-[6px] px-3 border-solid border-icarus-red border-2 rounded hover:bg-icarus-red hover:text-white hover:underline tracking-wide mr-2 md:mr-4 lg:mr-8">Instragram</a>
+                <a href="https://www.instagram.com/icarusluxembourg/" taget="_blank" class="font-light text-sm md:text-lg lg:text-xl py-[6px] px-3 border-solid border-icarus-red border-2 rounded hover:bg-icarus-red hover:text-white hover:underline tracking-wide mr-2 md:mr-4 lg:mr-8">Instagram</a>
                 <a href="mailto:teamicarus@gmx.com" target="_blank" class="font-light text-sm md:text-lg lg:text-xl py-[6px] px-3 border-solid border-icarus-red border-2 rounded hover:bg-icarus-red hover:text-white hover:underline tracking-wide">Email</a>
             </p>
         </div>
@@ -453,6 +450,42 @@
         <br class="my-1 mx-0 block">
         <p>@2024 by Icarus </p>
     </footer>
+
+    <!-- <script src="/node_modules/flowbite/dist/flowbite.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+
+    <script>
+        // Get the navbar element
+        const navbar = document.getElementById('navbar');
+        const navLinks = document.querySelectorAll('#nav a');
+    
+        // Listen for the scroll event
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 120) {
+                navbar.classList.add('bg-white');
+                navbar.classList.remove('bg-transparent');
+                navbar.classList.add('border-icarus-red');
+                navbar.classList.add('border-b-2');
+
+                navLinks.forEach(link => {
+                    link.classList.add('md:text-black');
+                    link.classList.remove('md:text-white');
+                });
+
+            } else {
+                navbar.classList.add('bg-transparent');
+                navbar.classList.remove('bg-white');
+                navbar.classList.remove('border-icarus-red');
+                navbar.classList.remove('border-b-2');
+
+                navLinks.forEach(link => {
+                    link.classList.remove('md:text-black');
+                    link.classList.add('md:text-white');
+                });
+            }
+        });
+    </script>
+
     <script>
         const menuBtn = document.getElementById('menuBtn');
         const menu = document.getElementById('menu');
@@ -461,43 +494,6 @@
             menu.classList.toggle('hidden');
         });
     </script>
-    <script>
-        const progressBar = () => {
-            const totalMoney = 1700;
-            const currentAmout = document.getElementById("currentAmout");
-            currentAmout.innerHTML = totalMoney;
 
-            const progress = document.getElementById("progress");
-            progress.innerHTML = Math.round(totalMoney / 30000 * 1000)/10 + "%";
-            progress.style.width = Math.round(totalMoney / 30000 * 100) + "%";
-        }
-
-        function delay(time) {
-            return new Promise(resolve => setTimeout(resolve, time));
-            }
-
-        const counter = async (id) => {
-            const element = document.getElementById(id);
-            let max = element.innerText
-            if (max === "000") {
-                var inc = Math.floor(1000/75)
-            } else {
-                var inc = max/75
-            }
-
-            for (let i = 0; i < 75; i++) {
-                element.innerText = Math.round(i * inc)
-                await delay(2)
-            }
-            element.innerText = max
-        }
-
-        const f1_counters = () => {
-            let arr = ["countries","schools1","schools2","students1","students2","students3"]
-            arr.forEach(element => {
-                counter(element)
-            });
-        }
-    </script>
 </body>
 </html>
