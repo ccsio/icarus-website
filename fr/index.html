@@ -36,40 +36,42 @@
                 </a>
                 <div>
                     <div class="flex justify-end md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                        <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-icarus-red rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-sticky" aria-expanded="false">
+                        <button id="menuBtn" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-icarus-red rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
                             <span class="sr-only">Open main menu</span>
-                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
                             </svg>
                         </button>
                     </div>
-                    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-                        <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 bg-gray-100 md:bg-transparent md:text-lg">
-                            <li>
-                                <a href="#f1-in-schools" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">F1 in Schools</a>
-                            </li>
-                            <li>
-                                <a href="#about-us" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">À propos</a>
-                            </li>
-                            <li>
-                                <a href="#support-us" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">Soutenez-nous</a>
-                            </li>
-                            <li>
-                                <a href="#our-sponsors" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">Nos sponsors</a>
-                            </li>
-                            <li>
-                                <a href="#our-team" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">Notre équipe</a>
-                            </li>
-                            <li>
-                                <a href="#work-with-us" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">Travaillez avec nous</a>
-                            </li>
-                            <li>
-                                <a href="#contact" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">Contact</a>
-                            </li>
-                            <li>
-                                <a href="../" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0"><img src="/assets/gb.svg" class="lg:h-7 rounded-lg w-8 h-6 lg:w-10"></a>
-                            </li>
-                        </ul>
+                    <div id="nav">
+                        <div id="menu" class="absolute md:relative right-2  items-center justify-between hidden w-auto md:flex md:order-1">
+                            <ul class="flex flex-col p-4 border-2 border-icarus-red md:border-none md:p-0 mt-4 font-medium rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 bg-gray-100 md:bg-transparent md:text-lg">
+                                <li>
+                                    <a href="#f1-in-schools" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">F1 in Schools</a>
+                                </li>
+                                <li>
+                                    <a href="#about-us" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">À propos</a>
+                                </li>
+                                <li>
+                                    <a href="#support-us" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">Soutenez-nous</a>
+                                </li>
+                                <li>
+                                    <a href="#our-sponsors" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">Nos sponsors</a>
+                                </li>
+                                <li>
+                                    <a href="#our-team" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">Notre équipe</a>
+                                </li>
+                                <li>
+                                    <a href="#work-with-us" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">Travaillez avec nous</a>
+                                </li>
+                                <li>
+                                    <a href="#contact" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0">Contact</a>
+                                </li>
+                                <li>
+                                    <a href="/" class="block py-2 px-3 rounded md:text-white md:hover:text-icarus-red md:p-0"><img src="/assets/gb.svg" class="lg:h-7 rounded-lg w-8 h-6 lg:w-10"></a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -455,7 +457,7 @@
     <script>
         // Get the navbar element
         const navbar = document.getElementById('navbar');
-        const navLinks = document.querySelectorAll('#navbar-sticky a'); 
+        const navLinks = document.querySelectorAll('#nav a'); 
     
         // Listen for the scroll event
         window.addEventListener('scroll', () => {
@@ -481,6 +483,14 @@
                     link.classList.add('md:text-white');
                 });
             }
+        });
+    </script>
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const menu = document.getElementById('menu');
+    
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
         });
     </script>
 </body>
