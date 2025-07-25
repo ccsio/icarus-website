@@ -1,31 +1,33 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{html,js}",
-    "*.html",
-    "*/*.html",
-    // "*/**/*.html",
-    "./node_modules/flowbite/**/*.js"
+    "index.html",
+    "./test.html",
+    "./**/*.html",
+  ],
+  safelist: [
+    'bg-icarus-red',  
+    'bg-icarus-red-1/2',
+    'bg-gray-700-3/4',
+    'text-icarus-red',
   ],
   theme: {
     extend: {
       colors: {
-        "black-1/2": "rgba(0,0,0,0.85)",
+        "black-85": "rgba(0,0,0,0.85)",
         "icarus-red": "#880807",
-        "icarus-red-1/2": "rgba(136,8,7,0.5)",
-        "gray-700-3/4": "rgba(55, 65, 81, 0.75)"
+        "icarus-red-59": "rgba(136,8,7,0.5)",
+        "gray-700-75": "rgba(55, 65, 81, 0.75)"
       },
       fontFamily: {
-        DelaGothic: ["DelaGothic","sans-serif"]
+        DelaGothic: ["DelaGothic", "sans-serif"]
       }
     },
     screens: {
-      sm: {'raw': '(min-width: 640px)'},
+      sm: "640px",
       md: "768px",
-      lg: "1024px"
-    }
+      lg: "1024px",
   },
-  plugins: [
-    require('flowbite/plugin')
-  ],
-}
+  },
+  plugins: [],
+};
