@@ -1,11 +1,10 @@
-@import "tailwindcss/base";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "tailwindcss" source("tailwind.config.js");
 
-@import "tailwindcss/components";
-
-@import "tailwindcss/utilities";
-
-@font-face {
+/* @font-face {
     font-family: "DelaGothic";
     font-display: swap;
     src: url("/assets/DelaGothicOne.woff2") format("woff2");
-}
+} */

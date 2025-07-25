@@ -1,8 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- HTML Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="We're a team of students from the European School of Luxembourg II, taking part in the STEM Racing Project.">
+    <meta name="author" content="Icarus">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://icarus-team.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Icarus">
+    <meta property="og:description" content="We're a team of students from the European School of Luxembourg II, take part in the STEM Racing Project.">
+    <meta property="og:image" content="https://icarus-team.com/assets/event_pictures/whole_team.JPG">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="icarus-team.com">
+    <meta property="twitter:url" content="https://icarus-team.com/">
+    <meta name="twitter:title" content="Icarus">
+    <meta name="twitter:description" content="We're a team of students from the European School of Luxembourg II, taking part in the STEM Racing Project.">
+    <meta name="twitter:image" content="https://icarus-team.com/assets/event_pictures/whole_team.JPG">
+
+    
     <title>Icarus | Video</title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon_rounded.png">
     <link rel="stylesheet" href="/css/build.css">
@@ -19,6 +39,12 @@
 </script>
 
 <body class="m-0 bg-black h-screen">
+    <div class="absolute bottom-0 left-0 p-3 bg-white rounded-t-lg w-full md:flex justify-between">
+        <p>This website uses Google Analytics to collect anonymous information such as the number of visitors to the site and the most popular pages. By continuing to use this website you agree to this collection.</p>
+        <button id="close-ga-notice">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
+        </button>
+    </div>
     <div class="flex justify-center items-center h-full">
         <video controls class="h-auto max-h-screen">
             <source src="/assets/videos/school_promo.webm" type="video/webm">
@@ -26,5 +52,10 @@
             Your browser does not support the video tag.
         </video> 
     </div>
+    <script>
+        document.getElementById('close-ga-notice').addEventListener('click', function() {
+            this.parentElement.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
