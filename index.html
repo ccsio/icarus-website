@@ -29,6 +29,8 @@
     <link rel="preload" as="image" href="/assets/edited/team_photo4_3.webp" media="(min-width: 1024px)">
 
     <link rel="stylesheet" href="/css/build.css">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+
     <title>Icarus | Home</title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon_rounded.png">
 </head>
@@ -106,58 +108,24 @@
             <!-- Carousel wrapper -->
             <div class="relative overflow-hidden h-screen mt-0">
                 <div class="hidden duration-1000 ease-in-out" data-carousel-item>
-                    <picture class="absolute block w-screen h-screen -translate-x-1/2 top-0 left-1/2 brightness-50 z-0 t-0">
-                        <source srcset="/assets/edited/team_photo_new_1_2.webp" media="(max-width: 648px)">
-                        <source srcset="/assets/edited/team_photo_new_9_16.webp" media="(min-width: 649px) and (max-width: 768px)">
-                        <source srcset="/assets/edited/team_photo_new_4_5.webp" media="(min-width: 769px) and (max-width: 1023px)">
-                        <source srcset="/assets/edited/team_photo_new_4_3.webp" media="(min-width: 1024px)">
-                        <img src="/assets/edited/team_photo_new_9_16.webp" alt="Team photo at our pit display 2023">
-                    </picture>
-                </div>
-                <!-- <div class="hidden duration-1000 ease-in-out object-cover" data-carousel-item>
-                    <picture class="absolute block w-screen h-screen -translate-x-1/2 top-0 left-1/2 brightness-50 z-0 t-0 object-cover">
-                        <source srcset="/assets/edited/icarus_podium1_2.webp" media="(max-width: 648px)">
-                        <source srcset="/assets/edited/icarus_podium9_16.webp" media="(min-width: 649px) and (max-width: 768px)">
-                        <source srcset="/assets/edited/icarus_podium4_5.webp" media="(min-width: 769px) and (max-width: 1023px)">
-                        <source srcset="/assets/edited/icarus_podium4_3.webp" media="(min-width: 1024px)">
-                        <img src="/assets/edited/icarus_podium9_16.webp" alt="Our team at the podium">
-                    </picture>
-                </div> -->
-                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
-                    <picture class="absolute block w-screen h-screen -translate-x-1/2 top-0 left-1/2 brightness-50 z-0 t-0">
-                        <source srcset="/assets/edited/june_team_photo1_2.webp" media="(max-width: 648px)">
-                        <source srcset="/assets/edited/june_team_photo9_16.webp" media="(min-width: 649px) and (max-width: 768px)">
-                        <source srcset="/assets/edited/june_team_photo4_5.webp" media="(min-width: 769px) and (max-width: 1023px)">
-                        <source srcset="/assets/edited/june_team_photo4_3.webp" media="(min-width: 1024px)">
-                        <img src="/assets/edited/june_team_photo9_16.webp" alt="Our team at the pit display 2024">
-                    </picture>
+                    <img src="/assets/edited/team_photo_new_4_3.webp" class="w-screen h-screen object-cover z-0 object-[50%_30%] brightness-50" alt="Team photo next to our workspace">
                 </div>
                 <div class="hidden duration-1000 ease-in-out" data-carousel-item>
-                    <picture class="absolute block w-screen h-screen -translate-x-1/2 top-0 left-1/2 brightness-50 z-0 t-0">
-                        <source srcset="/assets/edited/team_smoke_tunnel1_2.webp" media="(max-width: 648px)">
-                        <source srcset="/assets/edited/team_smoke_tunnel9_16.webp" media="(min-width: 649px) and (max-width: 768px)">
-                        <source srcset="/assets/edited/team_smoke_tunnel4_5.webp" media="(min-width: 769px) and (max-width: 1023px)">
-                        <source srcset="/assets/edited/team_smoke_tunnel4_3.webp" media="(min-width: 1024px)">
-                        <img src="/assets/edited/team_smoke_tunnel9_16.webp" alt="Our team at the smoke tunnel">
-                    </picture>
+                    <img src="/assets/edited/june_team_photo4_3.webp" class="w-screen h-screen object-cover z-0 object-[50%_30%] brightness-50" alt="Team photo outside">
                 </div>
                 <div class="hidden duration-1000 ease-in-out" data-carousel-item>
-                    <picture class="absolute block w-screen h-screen -translate-x-1/2 top-0 left-1/2 brightness-50 z-0 t-0">
-                        <source srcset="/assets/edited/bake_sale_new_1_2.webp" media="(max-width: 648px)">
-                        <source srcset="/assets/edited/bake_sale_new_9_16.webp" media="(min-width: 649px) and (max-width: 768px)">
-                        <source srcset="/assets/edited/bake_sale_new_4_5.webp" media="(min-width: 769px) and (max-width: 1023px)">
-                        <source srcset="/assets/edited/bake_sale_new_4_3.webp" media="(min-width: 1024px)">
-                        <img src="/assets/edited/bake_sale_new_9_16.webp" alt="Bake Sale Image">
-                    </picture>
+                    <img src="/assets/edited/team_smoke_tunnel4_3.webp" class="w-screen h-screen object-cover z-0 object-[50%_30%] brightness-50" alt="Our team at the smoke tunnel">
+                </div>
+                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                    <img src="/assets/edited/bake_sale_new_4_3.webp" class="w-screen h-screen object-cover z-0 object-[50%_30%] brightness-50" alt="Our team during a bake sale">
                 </div>
             </div>
             <!-- Slider indicators -->
             <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
                 <button type="button" class="w-2 h-2 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                <button type="button" class="w-2 h-2 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                <!-- <button type="button" class="w-2 h-2 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button> -->
-                <button type="button" class="w-2 h-2 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                <button type="button" class="w-2 h-2 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+                <button type="button" class="w-2 h-2 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="1"></button>
+                <button type="button" class="w-2 h-2 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="2"></button>
+                <button type="button" class="w-2 h-2 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="3"></button>
             </div>
         </div>
         <div class="absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2 text-white p-2 rounded text-center z-10">
@@ -515,8 +483,8 @@
         <p>@2025 by Icarus </p>
     </footer>
 
-    <!-- <script src="/node_modules/flowbite/dist/flowbite.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
 
     <script>
         // Get the navbar element
