@@ -12,6 +12,7 @@
 @theme {
   /* Colors */
   --color-icarus-red: #880708;
+  --color-icarus-red-50: rgba(136,8,7,0.5);
 
   /* Custom family name for Tailwind utility */  
   --font-dela: 'Dela Gothic One', serif;
